@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kräuter und Gewürze – Nivora Graufeder</title>
+<meta name="description" content="Kräuter und Gewürze: Aus Küche, Haushalt und Hausapotheke. 50 Pflanzen, fünf Blickwinkel, eigene Illustrationen. Mit zwei kostenlosen Geschenken zum Herunterladen.">
+<meta property="og:title" content="Kräuter und Gewürze – Aus Küche, Haushalt und Hausapotheke">
+<meta property="og:description" content="50 Kräuter und Gewürze, jede Pflanze aus fünf Blickwinkeln. Von Nivora Graufeder.">
+<meta property="og:image" content="bilder/cover.jpg">
+<style>
+/* Schrift liegt auf der eigenen Seite – keine Verbindung zu Google */
+@font-face{font-family:'Lora';src:url('schrift/Lora.ttf') format('truetype');font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Lora';src:url('schrift/Lora-Italic.ttf') format('truetype');font-weight:400 700;font-style:italic;font-display:swap}
+
+:root{
+  --papier:#FBF4E4; --papier-2:#F4EAD3; --weiss:#FFFDF8;
+  --gruen:#273E12; --gruen-2:#3F5F24; --ocker:#B8792A; --text:#2E2E24; --grau:#6B6A5C;
+  --linie:#E2D6BA;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--papier);color:var(--text);font-family:'Lora',Georgia,serif;font-size:18px;line-height:1.65}
+img{max-width:100%;display:block}
+a{color:var(--gruen)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h1,h2,h3{color:var(--gruen);line-height:1.15;font-weight:600}
+h2{font-size:clamp(28px,4vw,40px);text-align:center;margin-bottom:12px}
+.lead{text-align:center;color:var(--grau);max-width:620px;margin:0 auto 44px}
+.marke{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ocker);font-weight:600}
+.zier{display:flex;align-items:center;justify-content:center;gap:14px;margin:18px auto 0;color:var(--gruen-2)}
+.zier::before,.zier::after{content:"";height:1px;width:70px;background:var(--gruen-2);opacity:.5}
+
+/* Knöpfe */
+.knopf{display:inline-block;text-decoration:none;font-family:inherit;font-weight:600;font-size:17px;
+  padding:14px 26px;border-radius:999px;border:2px solid var(--gruen);transition:.2s;text-align:center}
+.knopf.voll{background:var(--gruen);color:#FBF4E4}
+.knopf.voll:hover{background:var(--gruen-2);border-color:var(--gruen-2)}
+.knopf.leer{background:transparent;color:var(--gruen)}
+.knopf.leer:hover{background:var(--gruen);color:#FBF4E4}
+.knopfreihe{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Kopf */
+.kopf{background:radial-gradient(ellipse at 70% 30%,#FFF9EC 0%,var(--papier) 55%,var(--papier-2) 100%);padding:56px 0 72px}
+.kopf .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.kopf h1{font-size:clamp(42px,6.4vw,72px);margin:14px 0 10px}
+.untertitel{font-size:clamp(14px,1.6vw,17px);letter-spacing:.2em;text-transform:uppercase;color:var(--text);margin-bottom:22px}
+.kopf p.text{font-size:19px;max-width:520px;margin-bottom:28px}
+.cover{position:relative;justify-self:center}
+.cover img{width:min(420px,100%);box-shadow:18px 26px 50px rgba(60,45,25,.35),0 2px 6px rgba(0,0,0,.15);border-radius:2px 6px 6px 2px}
+.ausgaben{margin-top:14px;font-size:15px;color:var(--grau)}
+
+/* Fünf Blickwinkel */
+.blick{background:var(--weiss);border-top:1px solid var(--linie);border-bottom:1px solid var(--linie)}
+.fuenf{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.karte{background:var(--papier);border:1px solid var(--linie);border-radius:14px;padding:24px 18px;text-align:center}
+.nr{font-size:34px;color:var(--ocker);font-weight:600;line-height:1}
+.karte h3{font-size:20px;margin:10px 0 8px}
+.karte p{font-size:15.5px;color:var(--grau);line-height:1.55}
+
+/* Einblick */
+.seiten{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.seiten figure{background:#fff;box-shadow:8px 12px 28px rgba(60,45,25,.22);border-radius:3px;overflow:hidden}
+.seiten figcaption{font-size:14px;color:var(--grau);text-align:center;padding:10px 6px 12px;background:var(--weiss)}
+
+/* Geschenke */
+.geschenke{background:linear-gradient(180deg,var(--papier-2),var(--papier))}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.geschenk{background:var(--weiss);border:1px solid var(--linie);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.geschenk .bild{background:#FBF8EC;display:flex;justify-content:center;align-items:flex-end;height:220px;padding-top:14px}
+.geschenk .bild img{height:100%;object-fit:contain}
+.geschenk .inhalt{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
+.geschenk .art{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ocker);font-weight:600}
+.geschenk h3{font-size:25px;margin:6px 0 10px}
+.geschenk p{font-size:16.5px;color:var(--text);margin-bottom:12px}
+.geschenk ul{list-style:none;margin:2px 0 22px}
+.geschenk li{font-size:15.5px;color:var(--grau);padding-left:22px;position:relative;margin-bottom:4px}
+.geschenk li::before{content:"✿";position:absolute;left:0;color:var(--gruen-2);font-size:13px;top:2px}
+.geschenk .knopf{margin-top:auto;align-self:flex-start}
+.kostenlos{text-align:center;color:var(--grau);font-size:15px;margin-top:22px}
+
+/* Autorin */
+.autorin .wrap{max-width:760px;text-align:center}
+.autorin p{margin-bottom:14px}
+.autorin .zitat{font-style:italic;font-size:21px;color:var(--gruen);margin:22px 0}
+
+/* Abschluss */
+.abschluss{background:var(--gruen);color:#F4EAD3;text-align:center}
+.abschluss h2{color:#FBF4E4}
+.abschluss p{color:#E5DCC4;margin-bottom:26px}
+.abschluss .knopfreihe{justify-content:center}
+.abschluss .knopf.voll{background:#FBF4E4;color:var(--gruen);border-color:#FBF4E4}
+.abschluss .knopf.voll:hover{background:#fff}
+.abschluss .knopf.leer{color:#FBF4E4;border-color:#FBF4E4}
+.abschluss .knopf.leer:hover{background:#FBF4E4;color:var(--gruen)}
+
+/* Hinweis & Fuß */
+.hinweis{font-size:14.5px;color:var(--grau);text-align:center;max-width:700px;margin:0 auto;padding:30px 20px 0;font-style:italic}
+footer{padding:36px 0 46px;text-align:center;font-size:15px;color:var(--grau)}
+footer nav{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+details.recht{max-width:760px;margin:16px auto 0;text-align:left;background:var(--weiss);border:1px solid var(--linie);border-radius:12px;padding:14px 20px}
+details.recht summary{cursor:pointer;font-weight:600;color:var(--gruen)}
+details.recht p{font-size:15px;margin-top:10px}
+
+/* Handy */
+@media (max-width:900px){
+  .kopf .wrap{grid-template-columns:1fr;text-align:center}
+  .kopf p.text{margin-left:auto;margin-right:auto}
+  .kopf .knopfreihe{justify-content:center}
+  .cover{order:-1}
+  .cover img{width:min(300px,78vw)}
+  .fuenf{grid-template-columns:1fr 1fr}
+  .fuenf .karte:last-child{grid-column:1/-1}
+  .seiten{grid-template-columns:1fr 1fr}
+  .zwei{grid-template-columns:1fr}
+  section{padding:56px 0}
+}
+@media (max-width:480px){
+  body{font-size:17px}
+  .knopfreihe .knopf{width:100%}
+  .fuenf{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ KOPF ============ -->
+<header class="kopf">
+  <div class="wrap">
+    <div>
+      <div class="marke">Neu von Nivora Graufeder</div>
+      <h1>Kräuter und Gewürze</h1>
+      <div class="untertitel">Aus Küche, Haushalt und Hausapotheke</div>
+      <p class="text">50 Kräuter und Gewürze, von Anis bis Zitronenmelisse. Jede Pflanze aus fünf Blickwinkeln – mit Illustration, Steckbrief und einem eigenen Rezept.</p>
+      <div class="knopfreihe">
+        <a class="knopf voll" href="https://www.amazon.de/dp/B0HLMQ9H6W" target="_blank" rel="noopener">Hardcover bei Amazon</a>
+        <a class="knopf leer" href="https://www.amazon.de/dp/B0HLMR21W9" target="_blank" rel="noopener">Taschenbuch bei Amazon</a>
+      </div>
+      <div class="ausgaben">Farbig gedruckt · 418 Seiten · <a href="#geschenke">+ zwei kostenlose Geschenke</a></div>
+    </div>
+    <div class="cover">
+      <img src="bilder/cover.jpg" alt="Buchcover: Kräuter und Gewürze – Aus Küche, Haushalt und Hausapotheke, von Nivora Graufeder">
+    </div>
+  </div>
+</header>
+
+<!-- ============ FÜNF BLICKWINKEL ============ -->
+<section class="blick">
+  <div class="wrap">
+    <h2>Fünf Blickwinkel je Pflanze</h2>
+    <p class="lead">Kräuter stehen in fast jeder Küche. Doch die wenigsten wissen, was wirklich in ihnen steckt.</p>
+    <div class="fuenf">
+      <div class="karte"><div class="nr">1</div><h3>Küche</h3><p>Wofür sich das Kraut eignet und wie du es einsetzt.</p></div>
+      <div class="karte"><div class="nr">2</div><h3>Haushalt</h3><p>Anwendungen außerhalb des Kochtopfs.</p></div>
+      <div class="karte"><div class="nr">3</div><h3>Hausapotheke</h3><p>Überliefertes Wissen zur Wirkung.</p></div>
+      <div class="karte"><div class="nr">4</div><h3>Anbau</h3><p>Im Garten, auf dem Balkon oder der Fensterbank.</p></div>
+      <div class="karte"><div class="nr">5</div><h3>Rezept</h3><p>Mit Personenzahl, Zeit und Haltbarkeit.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EINBLICK ============ -->
+<section>
+  <div class="wrap">
+    <h2>Ein Blick ins Buch</h2>
+    <p class="lead">Jede Pflanze beginnt mit einer eigenen Illustration und einem Steckbrief: Herkunft, Pflanzenteil, Geschmack und Erntezeit auf einen Blick.</p>
+    <div class="seiten">
+      <figure><img src="bilder/seite-lavendel.jpg" alt="Buchseite Lavendel" loading="lazy"><figcaption>Lavendel</figcaption></figure>
+      <figure><img src="bilder/seite-basilikum.jpg" alt="Buchseite Basilikum" loading="lazy"><figcaption>Basilikum</figcaption></figure>
+      <figure><img src="bilder/seite-chili.jpg" alt="Buchseite Chili" loading="lazy"><figcaption>Chili</figcaption></figure>
+      <figure><img src="bilder/seite-goldene-milch.jpg" alt="Rezeptseite Goldene Milch" loading="lazy"><figcaption>Rezept: Goldene Milch</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GESCHENKE ============ -->
+<section class="geschenke" id="geschenke">
+  <div class="wrap">
+    <div style="text-align:center" class="marke">Kostenlos für dich</div>
+    <h2 style="margin-top:8px">Zwei kleine Geschenke</h2>
+    <p class="lead">Zum Ausprobieren, Ausdrucken und Anhören – ohne Anmeldung.</p>
+    <div class="zwei">
+      <article class="geschenk">
+        <div class="bild"><img src="bilder/pflanze-lavendel.jpg" alt="" loading="lazy"></div>
+        <div class="inhalt">
+          <div class="art">PDF zum Ausdrucken</div>
+          <h3>Der Kräuter-Spickzettel</h3>
+          <p>10 beliebte Kräuter auf einen Blick – für die Küchenwand oder den Kühlschrank.</p>
+          <ul>
+            <li>Wofür in der Küche</li>
+            <li>Wofür im Haushalt</li>
+            <li>Was die Hausapotheke sagt</li>
+          </ul>
+          <a class="knopf voll" href="https://drive.google.com/file/d/1ssCeA6sxtdsLEQju7_hI2d3n2noqHCSI/view?usp=sharing" target="_blank" rel="noopener">PDF herunterladen</a>
+        </div>
+      </article>
+      <article class="geschenk">
+        <div class="bild"><img src="bilder/pflanze-rosmarin.jpg" alt="" loading="lazy"></div>
+        <div class="inhalt">
+          <div class="art">MP3 zum Anhören</div>
+          <h3>Omas Kräuterschrank</h3>
+          <p>Eine ruhige Hörgeschichte von etwa 3 Minuten über alte Hausmittel aus Küche und Garten.</p>
+          <ul>
+            <li>Zum Zurücklehnen und Zuhören</li>
+            <li>Mit Tipps aus dem Buch</li>
+            <li>Auf Handy oder Computer</li>
+          </ul>
+          <a class="knopf voll" href="https://drive.google.com/file/d/1c6OxMo21ped5EkoV_NSJ5pKf00Nitapn/view?usp=sharing" target="_blank" rel="noopener">MP3 anhören &amp; herunterladen</a>
+        </div>
+      </article>
+    </div>
+    <p class="kostenlos">Beide Geschenke sind kostenlos. Du musst dich nirgends eintragen.</p>
+  </div>
+</section>
+
+<!-- ============ AUTORIN ============ -->
+<section class="autorin">
+  <div class="wrap">
+    <div class="marke">Über die Autorin</div>
+    <h2 style="margin-top:8px">Nivora Graufeder</h2>
+    <p class="zitat">„Dieses Buch war mein erstes Manuskript. Es hat lange auf seine Bilder gewartet.“</p>
+    <p>Nivora Graufeder schreibt Kinderbücher, Krimis und Sachbücher für die Zwergenbibliothek. Mit „Kräuter und Gewürze“ ist nun das Buch erschienen, mit dem alles angefangen hat – mit eigenen Illustrationen und viel Liebe zum Detail.</p>
+  </div>
+</section>
+
+<!-- ============ ABSCHLUSS ============ -->
+<section class="abschluss">
+  <div class="wrap">
+    <h2>Mehr als nur Würze.</h2>
+    <p>Zum Nachschlagen, Ausprobieren und Verschenken. Erhältlich bei Amazon.</p>
+    <div class="knopfreihe">
+      <a class="knopf voll" href="https://www.amazon.de/dp/B0HLMQ9H6W" target="_blank" rel="noopener">Hardcover bei Amazon</a>
+      <a class="knopf leer" href="https://www.amazon.de/dp/B0HLMR21W9" target="_blank" rel="noopener">Taschenbuch bei Amazon</a>
+    </div>
+  </div>
+</section>
+
+<p class="hinweis">Die Angaben zur Hausapotheke in Buch und Geschenken sind überliefertes Wissen. Sie ersetzen keine ärztliche Beratung. Bei Beschwerden, in der Schwangerschaft oder bei regelmäßiger Einnahme von Medikamenten bitte vorher ärztlichen Rat einholen.</p>
+
+<!-- ============ FUSS ============ -->
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="https://alle-link.pages.dev/">Alle Bücher & Tools</a>
+      <a href="#impressum" onclick="document.getElementById('impressum').open=true">Impressum</a>
+      <a href="#datenschutz" onclick="document.getElementById('datenschutz').open=true">Datenschutz</a>
+    </nav>
+    <div>© 2026 Nivora Graufeder · Zwergenbibliothek</div>
+
+    <details class="recht" id="impressum">
+      <summary>Impressum</summary>
+      <p><strong>Angaben gemäß § 5 DDG</strong><br>
+      Nivora Graufeder (Pseudonym)<br>
+      Karl-Kippenhahn-Str. 17<br>
+      08058 Zwickau<br>
+      Deutschland</p>
+      <p><strong>Kontakt</strong><br>E-Mail: <a href="mailto:sachsenstyle@t-online.de">sachsenstyle@t-online.de</a><br>Telefon: 0176 64790714</p>
+      <p><strong>Verantwortlich für den Inhalt</strong><br>Nivora Graufeder, Anschrift wie oben</p>
+    </details>
+
+    <details class="recht" id="datenschutz">
+      <summary>Datenschutz</summary>
+      <p><strong>Verantwortlich:</strong> siehe Impressum.</p>
+      <p><strong>Hosting:</strong> Diese Seite wird bei Cloudflare, Inc. (Cloudflare Pages) gehostet. Beim Aufruf verarbeitet Cloudflare technisch notwendige Daten wie die IP-Adresse, um die Seite auszuliefern und vor Angriffen zu schützen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+      <p><strong>Keine Cookies, kein Tracking:</strong> Diese Seite setzt keine Cookies und verwendet keine Analyse- oder Werbedienste. Schriften und Bilder liegen auf dieser Seite selbst; beim bloßen Aufruf der Seite werden keine Daten an Google oder andere Anbieter übertragen.</p>
+      <p><strong>Downloads:</strong> Die kostenlosen Geschenke kannst du ohne Anmeldung herunterladen; dabei erheben wir keine persönlichen Daten. Die PDF und die MP3 liegen bei Google Drive. Erst wenn du auf den Download-Knopf klickst, wirst du zu Google weitergeleitet; dort gelten die Datenschutzbestimmungen von Google.</p>
+      <p><strong>Links zu Amazon:</strong> Erst wenn du auf einen Amazon-Link klickst, gelangst du auf die Seite von Amazon. Dort gelten die Datenschutzbestimmungen von Amazon.</p>
+      <p><strong>Deine Rechte:</strong> Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch sowie ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde.</p>
+    </details>
+  </div>
+</footer>
+
+</body>
+</html>
